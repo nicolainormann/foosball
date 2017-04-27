@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component/app';
+import { NavigationComponent } from './navigation.component/navigation';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +19,9 @@ import { AppComponent } from './app.component/app';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+    NavigationComponent
+  ]
 })
 export class AppModule { }
