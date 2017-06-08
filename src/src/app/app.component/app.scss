@@ -1,0 +1,9 @@
+@import '../../variables';
+
+.app{
+
+	&__page{
+		padding: $padding-medium;
+		margin-left: $navigation-width;
+	}
+}

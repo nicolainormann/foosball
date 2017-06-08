@@ -5,12 +5,24 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component/app';
+
 import { NavigationComponent } from './navigation.component/navigation';
+import { NavigationItemComponent } from './navigation.item.component/navigation.item';
+
+import { StartComponent } from './start.component/start';
+
+import { LadderComponent } from './ladder.component/ladder';
+
+import { StatsComponent } from './stats.component/stats';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    NavigationItemComponent,
+    StartComponent,
+    LadderComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
@@ -20,8 +32,7 @@ import { NavigationComponent } from './navigation.component/navigation';
   ],
   providers: [],
   bootstrap: [
-    AppComponent,
-    NavigationComponent
+    AppComponent
   ]
 })
 export class AppModule { }
