@@ -15,6 +15,9 @@ import { LadderComponent } from './ladder.component/ladder';
 
 import { StatsComponent } from './stats.component/stats';
 
+import { DialogueComponent } from './dialogue.component/dialogue';
+import { DialogueService } from './dialogue.component/dialogue.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,8 @@ import { StatsComponent } from './stats.component/stats';
     NavigationItemComponent,
     StartComponent,
     LadderComponent,
-    StatsComponent
+    StatsComponent,
+    DialogueComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { StatsComponent } from './stats.component/stats';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    DialogueService
+  ],
   bootstrap: [
     AppComponent
   ]
