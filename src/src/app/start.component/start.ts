@@ -1,25 +1,32 @@
 import { Component } from '@angular/core';
-import { DialogueService } from '.././dialogue.component/dialogue.service';
+import { DialogService } from '.././dialog.component/dialog.service';
+
+import { LadderComponent } from '.././ladder.component/ladder';
 
 @Component({
-  selector: 'start',
-  templateUrl: './start.html',
-  styleUrls: ['./start.scss']
+	selector: 'start',
+	templateUrl: './start.html',
+	styleUrls: ['./start.scss']
 })
 export class StartComponent {
-  constructor(private dialogueService: DialogueService){
+	constructor(private dialogService: DialogService) {}
 
-  }
-
-	openDialogue(){
-    this.dialogueService.openDialogue({
-      header: "Dialogue",
-      content: `
-        <div class="dialogue">
-          <button>Dialogue button</button>
-        </div>
-      `,
-      close: true
-    });
-  }
+	openDialog() {
+		this.dialogService.openDialog({
+			header: "Dialog",
+			component: LadderComponent,
+			close: true,
+			inputs: 0,
+			buttons: {
+				button1: {
+					text: "Button 1",
+					cta: false,
+				},
+				button2: {
+					text: "Button 2",
+					cta: true
+				}
+			}
+		});
+	}
 }

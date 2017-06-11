@@ -1,5 +1,49 @@
+@mixin icon($icon){
+	color: $color-white;
+	font-family: 'IcoMoon-Free' !important;
+	content: #{"\"\\"}#{$icon + "\""};
+}
+
+$color-white: #fff;
+
+$color-black: #000;
+
+$color-grey-light: #e0e0e0;
+$color-grey:#9e9e9e;
+$color-grey-dark:#616161;
+$color-grey-darker: #424242;
+
+$color-lime-light: #eeff41;
+$color-lime: #c6ff00;
+$color-lime-dark: #aeea00;
+
+$font-size-small: 12px;
+$font-size-medium: 16px;
+$font-size-large: 20px;
+
 $padding-small: 10px;
 $padding-medium: 20px;
 $padding-large: 30px;
 
 $navigation-width: 100px;
+
+.btn{
+	font-weight: 700;
+	background-color: $color-grey;
+	color: $color-white;
+	padding: $padding-small;
+	border-radius: 5px;
+
+	&:hover{
+		background-color: $color-grey-darker;
+	}
+
+	&_cta{
+		color: $color-grey-darker;
+		background-color: $color-lime;
+
+		&:hover{
+			background-color: $color-lime-dark;
+		}
+	}
+}

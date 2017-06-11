@@ -2,6 +2,34 @@
 
 @import 'variables';
 
+@font-face {
+    font-family: 'IcoMoon-Free';
+    src: url('/assets/icomoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
 body{
 	margin: 0;
+	background-color: $color-grey-dark;
+	color: $color-white;
+	font-family: 'Roboto', sans-serif;
+}
+
+a{
+	text-decoration: none;
+	color: $color-lime;
+
+	&:hover{
+		color: $color-lime-dark;
+	}
+}
+
+button{
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	padding: 0;
 }

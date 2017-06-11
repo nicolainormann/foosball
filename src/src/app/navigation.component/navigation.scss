@@ -6,6 +6,6 @@
 	top:0;
 	width: $navigation-width;
 	height: calc(100% - #{$padding-medium} * 2);
-	background-color: grey;
+	background-color: $color-grey-darker;
 	padding: $padding-medium 0;
 }

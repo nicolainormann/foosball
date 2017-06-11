@@ -15,8 +15,8 @@ import { LadderComponent } from './ladder.component/ladder';
 
 import { StatsComponent } from './stats.component/stats';
 
-import { DialogueComponent } from './dialogue.component/dialogue';
-import { DialogueService } from './dialogue.component/dialogue.service';
+import { DialogComponent } from './dialog.component/dialog';
+import { DialogService } from './dialog.component/dialog.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { DialogueService } from './dialogue.component/dialogue.service';
     StartComponent,
     LadderComponent,
     StatsComponent,
-    DialogueComponent
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,7 @@ import { DialogueService } from './dialogue.component/dialogue.service';
     AppRoutingModule
   ],
   providers: [
-    DialogueService
+    DialogService
   ],
   bootstrap: [
     AppComponent
