@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef, ViewChild, ReflectiveInjector, ComponentFactoryResolver } from '@angular/core';
+import { Component, ViewContainerRef, ViewChild, ComponentFactoryResolver } from '@angular/core';
 
 import { DialogService } from '.././dialog.component/dialog.service';
 
@@ -54,22 +54,9 @@ export class DialogComponent {
 
 	ngOnInit() {
 		this.dialogService.dialogObservable.subscribe(dialogObj => {
-			let inputProviders = Object.keys(dialogObj.inputs).map((inputName) => { return { provide: inputName, useValue: dialogObj.inputs[inputName] }; });
-			let resolvedInputs = ReflectiveInjector.resolve(inputProviders);
+			const factory = this.resolver.resolveComponentFactory(dialogObj.component);
 
-			let injector = ReflectiveInjector.fromResolvedProviders(resolvedInputs, this.dynamicComponentContainer.parentInjector);
-
-			let factory = this.resolver.resolveComponentFactory(dialogObj.component);
-
-			let component = factory.create(injector);
-
-			this.dynamicComponentContainer.insert(component.hostView);
-
-			if (this.dialogComponent) {
-				this.dialogComponent.destroy();
-			}
-
-			this.dialogComponent = component;
+			this.dynamicComponentContainer.createComponent(factory);
 			
 			Object.assign(this.dialogObj, dialogObj);
 			this.dialogObj.open = true;
@@ -79,7 +66,6 @@ export class DialogComponent {
 	private close(){
 		this.dialogObj.open = false;
 		this.dynamicComponentContainer.clear();
-		this.dialogComponent.destroy();
 	}
 
 	closeOnClick(e){
