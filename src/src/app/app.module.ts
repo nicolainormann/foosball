@@ -13,32 +13,36 @@ import { StartComponent } from './start.component/start';
 
 import { LadderComponent } from './ladder.component/ladder';
 
+import { UsersComponent } from './users.component/users';
+import { UsersService } from './users.component/users.service';
+import { UserListComponent } from './user.list.component/user.list';
+import { UserComponent } from './user.component/user';
+
 import { StatsComponent } from './stats.component/stats';
 
-import { DialogComponent } from './dialog.component/dialog';
-import { DialogService } from './dialog.component/dialog.service';
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavigationComponent,
-    NavigationItemComponent,
-    StartComponent,
-    LadderComponent,
-    StatsComponent,
-    DialogComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule
-  ],
-  providers: [
-    DialogService
-  ],
-  bootstrap: [
-    AppComponent
-  ]
+	declarations: [
+		AppComponent,
+		NavigationComponent,
+		NavigationItemComponent,
+		StartComponent,
+		LadderComponent,
+		UsersComponent,
+		UserListComponent,
+		UserComponent,
+		StatsComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpModule,
+		AppRoutingModule
+	],
+	providers: [
+		UsersService
+	],
+	bootstrap: [
+		AppComponent
+	]
 })
 export class AppModule { }

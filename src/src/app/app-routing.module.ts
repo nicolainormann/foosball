@@ -5,8 +5,9 @@ import { StartComponent } from './start.component/start';
 
 import { LadderComponent } from './ladder.component/ladder';
 
-import { StatsComponent } from './stats.component/stats';
+import { UsersComponent } from './users.component/users';
 
+import { StatsComponent } from './stats.component/stats';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'ladder',
     component: LadderComponent
+  },
+  {
+    path: 'users',
+    component: UsersComponent
   },
   {
     path: 'stats',
