@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component/app';
 
 import { NavigationComponent } from './navigation.component/navigation';
@@ -36,7 +40,9 @@ import { StatsComponent } from './stats.component/stats';
 		BrowserModule,
 		FormsModule,
 		HttpModule,
-		AppRoutingModule
+		AppRoutingModule,
+		AngularFireModule.initializeApp(environment.firebase),
+		AngularFireDatabaseModule
 	],
 	providers: [
 		UsersService
