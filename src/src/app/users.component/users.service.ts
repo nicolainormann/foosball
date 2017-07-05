@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
+interface IUser {
+	name: string,
+	username: string,
+	rating: number
+}
+
+interface IUsers extends Array<IUser>{}
+
 @Injectable()
 export class UsersService {
-	constructor(private db: AngularFireDatabase) {
-	}
+	users$: FirebaseListObservable<IUsers> = this.db.list("/users");
 
-	getUsers(){
-		this.db.list("/users").subscribe(users => {
-			return users;
-		});
+	constructor(private db: AngularFireDatabase) {
 	}
 }
