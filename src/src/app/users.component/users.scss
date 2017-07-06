@@ -1,0 +1,10 @@
+@import '../../variables';
+
+.users{
+	display: flex;
+	flex-direction: row;
+
+	&__column{
+		flex: 1;
+	}
+}

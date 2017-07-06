@@ -1,3 +1,9 @@
 <div class="users">
-	<user-list [users]="users"></user-list>
+	<div class="users__column">
+		<user-create></user-create>
+	</div>
+
+	<div class="users__column">
+		<user-list [users]="users"></user-list>
+	</div>
 </div>

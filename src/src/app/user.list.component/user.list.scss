@@ -1,5 +1,13 @@
 @import '../../variables';
 
 .user-list{
+	border: 1px solid $color-lime;
+	padding: $padding-medium;
 
+	&__head{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		color: $color-lime;
+	}
 }

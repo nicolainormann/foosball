@@ -21,6 +21,8 @@ import { UsersComponent } from './users.component/users';
 import { UsersService } from './users.component/users.service';
 import { UserListComponent } from './user.list.component/user.list';
 import { UserComponent } from './user.component/user';
+import { UserEditComponent } from './user.edit.component/user.edit';
+import { UserCreateComponent } from './user.create.component/user.create';
 
 import { StatsComponent } from './stats.component/stats';
 
@@ -34,7 +36,9 @@ import { StatsComponent } from './stats.component/stats';
 		UsersComponent,
 		UserListComponent,
 		UserComponent,
-		StatsComponent
+		StatsComponent,
+		UserEditComponent,
+		UserCreateComponent
 	],
 	imports: [
 		BrowserModule,
