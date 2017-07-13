@@ -1,12 +1,24 @@
-<div class="user-create">
-	<div class="user-create__head">
-		<div class="user-create__head-item">Name</div>
-		<div class="user-create__head-item">Username</div>
-	</div>
+<form class="user-create" #userCreateForm="ngForm" (ngSubmit)="onSubmit()">
+	<input 
+	class="input user-create__input" 
+	type="text" 
+	id="name" 
+	name="name" 
+	placeholder="Name" 
+	[(ngModel)]="model.name" 
+	#name="ngModel" 
+	required/>
 
-
-	<input type="text" placeholder="name" />
-	<input type="text" placeholder="username" />
-
-	<div class="btn bta_cta">Create user</div>
-</div>
+	<input 
+	class="input user-create__input" 
+	type="text" 
+	id="username" 
+	name="username" 
+	placeholder="Username" 
+	[(ngModel)]="model.username" 
+	#username="ngModel"
+	validationUserExists
+	required/>
+{{userCreateForm.value}}
+	<button type="submit" class="btn btn_cta user-create__btn" [disabled]="!userCreateForm.form.valid">Create user</button>
+</form>

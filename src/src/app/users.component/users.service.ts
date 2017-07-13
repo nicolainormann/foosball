@@ -15,4 +15,8 @@ export class UsersService {
 
 	constructor(private db: AngularFireDatabase) {
 	}
+
+	createUser(user: IUser){
+		
+	}
 }
