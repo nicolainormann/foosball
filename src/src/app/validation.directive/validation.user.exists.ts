@@ -17,7 +17,7 @@ export class ValidationUserExists implements Validator {
 		let exist;
 
 		this.usersService.users$.subscribe(users => {
-			exist = users.filter(user => user.username === c.value).length ? { validationUserExists: true } : { validationUserExists: false };
+			exist = users.filter(user => user.username === c.value).length ? { validationUserExists: true } : null;
 		});
 		
 		return exist;

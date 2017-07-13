@@ -1,11 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+import { NgForm } from '@angular/forms';
+
 export class User {
 	constructor(
 		public name: string,
-		public username: string,
-		public rating: number
-		) { }
+		public username: string
+	) { }
 }
 
 @Component({
@@ -14,13 +15,15 @@ export class User {
 	styleUrls: ['./user.create.scss']
 })
 export class UserCreateComponent {
-	model = new User("", "", 2000);
+	model = new User("", "");
 
 	@Input() existingUserNames;
 
 	@Output() onCreateUser = new EventEmitter();
 
-	onSubmit(){
+	onSubmit(form: NgForm) {
 		this.onCreateUser.emit(this.model);
+		this.model = new User("", "");
+		form.reset();
 	}
 }

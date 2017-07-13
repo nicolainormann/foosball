@@ -4,10 +4,13 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 interface IUser {
 	name: string,
 	username: string,
-	rating: number
+	rating: number,
+	rank: number,
+	wins: number,
+	losses: number
 }
 
-interface IUsers extends Array<IUser>{}
+interface IUsers extends Array<IUser> { }
 
 @Injectable()
 export class UsersService {
@@ -16,7 +19,15 @@ export class UsersService {
 	constructor(private db: AngularFireDatabase) {
 	}
 
-	createUser(user: IUser){
-		
+	getOrderedUsers(orderByChild = "") {
+		return this.db.list("/users", { query: { orderByChild: orderByChild } });
+	}
+
+	createUser(user: IUser) {
+		user.rating = 2000;
+		user.wins = 0;
+		user.losses = 0;
+
+		this.users$.push(user);
 	}
 }

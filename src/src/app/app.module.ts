@@ -16,6 +16,7 @@ import { NavigationItemComponent } from './navigation.item.component/navigation.
 import { StartComponent } from './start.component/start';
 
 import { LadderComponent } from './ladder.component/ladder';
+import { LadderUserComponent } from './ladder.user.component/ladder.user';
 
 import { UsersComponent } from './users.component/users';
 import { UsersService } from './users.component/users.service';
@@ -35,6 +36,7 @@ import { ValidationUserExists } from "./validation.directive/validation.user.exi
 		NavigationItemComponent,
 		StartComponent,
 		LadderComponent,
+		LadderUserComponent,
 		UsersComponent,
 		UserListComponent,
 		UserComponent,

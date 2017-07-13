@@ -14,10 +14,8 @@ export class UsersComponent {
 	}
 
 	ngOnInit() {
-		this.usersService.users$.subscribe(users => {
-			this.users = users.sort((a, b) => {
-				return b.rating - a.rating;
-			});
+		this.usersService.getOrderedUsers("name").subscribe(users => {
+			this.users = users;
 		});
 	}
 
