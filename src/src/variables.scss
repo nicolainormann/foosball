@@ -1,7 +1,7 @@
-@mixin icon($icon){
-	color: $color-white;
-	font-family: 'IcoMoon-Free' !important;
-	content: #{"\"\\"}#{$icon + "\""};
+@mixin icon($icon) {
+    color: $color-white;
+    font-family: 'IcoMoon-Free' !important;
+    content: #{"\"\\"}#{$icon + "\""};
 }
 
 $color-white: #fff;
@@ -17,6 +17,10 @@ $color-lime-light: #eeff41;
 $color-lime: #c6ff00;
 $color-lime-dark: #aeea00;
 
+$color-red-light: #e57373;
+$color-red: #f44336;
+$color-red-dark: #d32f2f;
+
 $font-size-small: 12px;
 $font-size-medium: 16px;
 $font-size-large: 20px;
@@ -27,23 +31,45 @@ $padding-large: 30px;
 
 $navigation-width: 100px;
 
-.btn{
-	font-weight: 700;
-	background-color: $color-grey;
-	color: $color-white;
-	padding: $padding-small;
-	border-radius: 5px;
+.btn {
+    font-size: 14px;
+    font-weight: 700;
+    background-color: $color-grey;
+    color: $color-white;
+    padding: $padding-small;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
 
-	&:hover{
-		background-color: $color-grey-darker;
+    &:hover {
+        background-color: $color-grey-darker;
+    }
+
+    &_cta {
+        color: $color-grey-darker;
+        background-color: $color-lime;
+
+        &:hover {
+            background-color: $color-lime-dark;
+        }
+    }
+}
+
+.input {
+    padding: $padding-small;
+    border-radius: 5px;
+    border: 1px solid $color-grey-darker;
+
+    &.ng-valid[required],
+    &.ng-valid.required {
+        border-left: 5px solid $color-lime-dark;
+    }
+
+    &.ng-invalid {
+        border-left: 5px solid $color-red-dark;
 	}
-
-	&_cta{
-		color: $color-grey-darker;
-		background-color: $color-lime;
-
-		&:hover{
-			background-color: $color-lime-dark;
-		}
+	
+	&.ng-pristine{
+		border-left: 1px solid $color-grey-darker;
 	}
 }

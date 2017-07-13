@@ -26,6 +26,8 @@ import { UserCreateComponent } from './user.create.component/user.create';
 
 import { StatsComponent } from './stats.component/stats';
 
+import { ValidationUserExists } from "./validation.directive/validation.user.exists";
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -38,7 +40,8 @@ import { StatsComponent } from './stats.component/stats';
 		UserComponent,
 		StatsComponent,
 		UserEditComponent,
-		UserCreateComponent
+		UserCreateComponent,
+		ValidationUserExists
 	],
 	imports: [
 		BrowserModule,

@@ -6,5 +6,13 @@
 
 	&__column{
 		flex: 1;
+		
+		&:nth-child(odd){
+			margin-right: $padding-small;
+		}
+
+		&:nth-child(even){
+			margin-left: $padding-small;
+		}
 	}
 }

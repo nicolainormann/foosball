@@ -1,0 +1,14 @@
+@import '../../variables';
+
+.user-create{
+	display: flex;
+	flex-direction: column;
+
+	&__input{
+		margin-bottom: $padding-small;
+	}
+
+	&__btn{
+
+	}
+}
