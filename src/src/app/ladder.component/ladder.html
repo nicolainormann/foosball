@@ -1,3 +1,12 @@
 <div class="ladder">
+	<div class="ladder__head">
+		<div class="ladder__head-item">Name</div>
+		<div class="ladder__head-item">Played</div>
+		<div class="ladder__head-item">Wins</div>
+		<div class="ladder__head-item">Losses</div>
+		<div class="ladder__head-item">Win Ratio</div>
+		<div class="ladder__head-item">Win Percent</div>
+		<div class="ladder__head-item">Rating</div>
+	</div>
 	<ladder-user *ngFor="let user of users" [user]="user"></ladder-user>
 </div>

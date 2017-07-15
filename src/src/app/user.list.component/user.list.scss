@@ -5,13 +5,8 @@
 	padding: $padding-medium;
 
 	&__head{
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
 		color: $color-lime;
-
-		&-item{
-			flex: 1;
-		}
+		display: grid;
+		grid-template-columns: repeat(2, 50%);
 	}
 }

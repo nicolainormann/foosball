@@ -1,0 +1,14 @@
+@import '../../variables';
+
+.ladder-user{
+	display: grid;
+	grid-template-columns: 25% 10% 10% 10% 10% 10% 25%;
+
+	&__item{
+		text-align: right;
+
+		&:first-child{
+			text-align: left;
+		}
+	}
+}

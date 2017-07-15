@@ -1,0 +1,17 @@
+@import '../../variables';
+
+.ladder{
+	&__head{
+		display: grid;
+		grid-template-columns: 25% 10% 10% 10% 10% 10% 25%;
+		color: $color-lime;
+
+		&-item{
+			text-align: right;
+
+			&:first-child{
+				text-align: left;
+			}
+		}
+	}
+}
