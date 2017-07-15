@@ -16,11 +16,26 @@ export class LadderComponent {
 	ngOnInit() {
 		this.usersService.getOrderedUsers("rating").subscribe(users => {
 			this.users = users;
-			this.users.forEach(user => {
-				user.played = user.wins + user.losses;
-				user.winRatio = !isNaN(user.wins / user.losses) ? user.wins / user.losses : 0;
-				user.winPercent = !isNaN(user.wins / user.played * 100) ? user.wins / user.played * 100 : 0;
-			});
+			this.calculateMatchData();
+		});
+	}
+
+	private calculateMatchData(){
+		this.users.forEach(user => {
+			user.played = user.wins + user.losses;
+			
+			if(user.wins > 0 && user.losses === 0){
+				user.winRatio = 1;
+				user.winPercent = 100;
+			}
+			else if(user.wins === 0 && user.losses === 0){
+				user.winRatio = 0;
+				user.winPercent = 0;
+			}
+			else{
+				user.winRatio = user.wins / user.losses;
+				user.winPercent = user.wins / user.played * 100;
+			}
 		});
 	}
 }
