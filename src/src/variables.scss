@@ -4,6 +4,12 @@
     content: #{"\"\\"}#{$icon + "\""};
 }
 
+@mixin when-inside ($context) {
+	#{$context} & {
+	    @content;
+	}
+}
+
 $color-white: #fff;
 
 $color-black: #000;

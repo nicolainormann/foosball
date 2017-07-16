@@ -16,6 +16,10 @@ import { NavigationItemComponent } from './navigation.item.component/navigation.
 import { StartComponent } from './start.component/start';
 import { StartGameComponent } from './start.game.component/start.game';
 
+import { TableComponent } from './table.component/table';
+
+import { TeamComponent } from './team.component/team';
+
 import { LadderComponent } from './ladder.component/ladder';
 import { LadderUserComponent } from './ladder.user.component/ladder.user';
 
@@ -37,6 +41,8 @@ import { ValidationUserExists } from "./validation.directive/validation.user.exi
 		NavigationItemComponent,
 		StartComponent,
 		StartGameComponent,
+		TableComponent,
+		TeamComponent,
 		LadderComponent,
 		LadderUserComponent,
 		UsersComponent,

@@ -1,29 +1,7 @@
 <div class="start-game">
-	<div class="start-game__table">
-		<div class="start-game__bars start-game__bars_first">
-			<div class="start-game__goalie"></div>
-			<div class="start-game__defence"></div>
-			<div class="start-game__mid"></div>
-			<div class="start-game__attack"></div>
-		</div>
+	<team [team]="1"></team>
 
-		<div class="start-game__frame start-game__frame_first">
-		</div>
+	<table-component></table-component>
 
-		<div class="start-game__center">
-			<div class="start-game__end start-game__end_first"></div>
-			<div class="start-game__ball"></div>
-			<div class="start-game__end start-game__end_last"></div>
-		</div>
-
-		<div class="start-game__frame start-game__frame_last">
-		</div>
-
-		<div class="start-game__bars start-game__bars_last">
-			<div class="start-game__attack"></div>
-			<div class="start-game__mid"></div>
-			<div class="start-game__defence"></div>
-			<div class="start-game__goalie"></div>
-		</div>
-	</div>
+	<team [team]="2"></team>
 </div>
