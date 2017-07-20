@@ -1,0 +1,26 @@
+@import '../../variables';
+
+.start{
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-areas: 	"head-start 	head 		head-end"
+							"content-start 	content 	content-end"
+							"footer-start 	footer 		footer-end";
+
+	&__team{
+		&_one{
+			grid-area: head;
+		}
+
+		&_two{
+			grid-area: footer;
+		}
+	}
+
+	&__table{
+		grid-area: content;
+		height: 400px;
+		width: 450px;
+		margin: 0 auto;
+	}
+}
