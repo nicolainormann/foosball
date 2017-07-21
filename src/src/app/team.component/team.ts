@@ -8,5 +8,7 @@ import { Component, Input } from '@angular/core';
 export class TeamComponent {
 	@Input() team: number;
 
+	double = true;
+	
 	constructor() {}
 }

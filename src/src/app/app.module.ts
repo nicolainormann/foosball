@@ -18,6 +18,7 @@ import { StartComponent } from './start.component/start';
 import { TableComponent } from './table.component/table';
 
 import { TeamComponent } from './team.component/team';
+import { TeamMemberComponent } from './team.member.component/team.member';
 
 import { LadderComponent } from './ladder.component/ladder';
 import { LadderUserComponent } from './ladder.user.component/ladder.user';
@@ -41,6 +42,7 @@ import { ValidationUserExists } from "./validation.directive/validation.user.exi
 		StartComponent,
 		TableComponent,
 		TeamComponent,
+		TeamMemberComponent,
 		LadderComponent,
 		LadderUserComponent,
 		UsersComponent,
