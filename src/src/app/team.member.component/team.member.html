@@ -1,0 +1,3 @@
+<div class="team-member" [class.team-member_double]="double">
+	<div class="team-member__picker" (click)="pick()" [class.team-member__picker_defence]="member === 1 && double" [class.team-member__picker_offence]="member === 2 && double"></div>
+</div>

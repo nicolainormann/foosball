@@ -14,11 +14,11 @@ import { NavigationComponent } from './navigation.component/navigation';
 import { NavigationItemComponent } from './navigation.item.component/navigation.item';
 
 import { StartComponent } from './start.component/start';
-import { StartGameComponent } from './start.game.component/start.game';
 
 import { TableComponent } from './table.component/table';
 
 import { TeamComponent } from './team.component/team';
+import { TeamMemberComponent } from './team.member.component/team.member';
 
 import { LadderComponent } from './ladder.component/ladder';
 import { LadderUserComponent } from './ladder.user.component/ladder.user';
@@ -40,9 +40,9 @@ import { ValidationUserExists } from "./validation.directive/validation.user.exi
 		NavigationComponent,
 		NavigationItemComponent,
 		StartComponent,
-		StartGameComponent,
 		TableComponent,
 		TeamComponent,
+		TeamMemberComponent,
 		LadderComponent,
 		LadderUserComponent,
 		UsersComponent,

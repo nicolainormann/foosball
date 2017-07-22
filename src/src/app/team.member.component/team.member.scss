@@ -1,0 +1,64 @@
+@import '../../variables';
+
+.team-member{
+	width: 150px;
+
+	&_double{
+		width: 75px;
+	}
+
+	&__picker{
+		border-radius: 15px;
+		height: 75px;
+		background-color: $color-white;
+		border: 3px solid $color-grey-darker;
+		box-sizing: border-box;
+
+		&::before{
+			@include icon("e9b3");
+			color: $color-grey-darker;
+			line-height: 69px;
+			text-align: center;
+			font-size: 40px;
+			display: block;
+			width: 50%;
+			float: left;
+		}
+
+		&::after{
+			@include icon("e9b4");
+			color: $color-grey-darker;
+			line-height: 69px;
+			text-align: center;
+			font-size: 40px;
+			display: block;
+			width: 50%;
+			float: left;
+		}
+
+
+		&_offence{
+			border-radius: 50%;
+
+			&::before{
+				width: 100%;
+			}
+
+			&::after{
+				display: none;
+			}
+		}
+
+		&_defence{
+			border-radius: 50%;
+
+			&::after{
+				width: 100%;
+			}
+
+			&::before{
+				display: none;
+			}
+		}
+	}
+}
