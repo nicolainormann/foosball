@@ -1,8 +1,35 @@
 @import '../../variables';
 
 .team{
-	width: 400px;
+	width: 450px;
+	position: relative;
 	margin: 0 auto;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+
+	&__container{
+		width: calc(100% - 125px);
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr 2fr 2fr 1fr;
+
+		@include when-inside(".team_one"){
+			grid-template-areas: "goal def mid atk";
+			left: 35px;
+		}
+
+		@include when-inside(".team_two"){	
+			grid-template-areas: "atk mid def goal";
+			right: 35px;
+			float: right;
+		}
+	}
+
+	&__member{
+		&-one{
+			grid-area: goal;
+		}
+
+		&-two{
+			grid-area: mid;
+		}
+	}
 }

@@ -1,5 +1,7 @@
 <div class="team" [class.team_one]="team === 1" [class.team_two]="team === 2">
-    <team-member [member]="1" [double]="double"></team-member>
+    <div class="team__container">
+        <team-member class="team__member-one" [member]="1" [double]="double"></team-member>
 
-    <team-member [member]="2" [double]="double" *ngIf="double"></team-member>
+        <team-member class="team__member-two" [member]="2" [double]="double" *ngIf="double"></team-member>
+    </div>
 </div>

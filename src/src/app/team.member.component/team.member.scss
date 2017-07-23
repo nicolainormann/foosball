@@ -1,25 +1,31 @@
 @import '../../variables';
 
+$team-member-picker-width: 100px;
+$team-member-picker-width-double: $team-member-picker-width / 2;
+$team-member-picker-border-width: 3px;
+
 .team-member{
-	width: 150px;
+	width: $team-member-picker-width;
+	margin: 0 auto;
 
 	&_double{
-		width: 75px;
+		width: $team-member-picker-width-double;
 	}
 
 	&__picker{
 		border-radius: 15px;
-		height: 75px;
+		height: $team-member-picker-width-double;
 		background-color: $color-white;
-		border: 3px solid $color-grey-darker;
+		border: $team-member-picker-border-width solid $color-grey-darker;
 		box-sizing: border-box;
+		cursor: pointer;
 
 		&::before{
 			@include icon("e9b3");
 			color: $color-grey-darker;
-			line-height: 69px;
+			line-height: $team-member-picker-width-double - $team-member-picker-border-width * 2;
 			text-align: center;
-			font-size: 40px;
+			font-size: 30px;
 			display: block;
 			width: 50%;
 			float: left;
@@ -28,9 +34,9 @@
 		&::after{
 			@include icon("e9b4");
 			color: $color-grey-darker;
-			line-height: 69px;
+			line-height: $team-member-picker-width-double - $team-member-picker-border-width * 2;
 			text-align: center;
-			font-size: 40px;
+			font-size: 30px;
 			display: block;
 			width: 50%;
 			float: left;
