@@ -7,18 +7,44 @@ $team-member-picker-border-width: 3px;
 .team-member{
 	width: $team-member-picker-width;
 	margin: 0 auto;
+	position: relative;
 
 	&_double{
 		width: $team-member-picker-width-double;
 	}
 
+	&__users{
+		position: absolute;
+		left: calc(100% - 3px);
+		top: 0;
+		z-index: 3; 
+		padding: $padding-small;
+		background-color: $color-white;
+		border: $team-member-picker-border-width solid $color-grey-darker;
+		border-radius: 15px;
+		border-top-left-radius: 0;
+	}
+
+	&__user{
+		color: $color-grey-darker;
+	}
+
 	&__picker{
+		position: relative;
+		z-index: 4;
 		border-radius: 15px;
 		height: $team-member-picker-width-double;
 		background-color: $color-white;
 		border: $team-member-picker-border-width solid $color-grey-darker;
 		box-sizing: border-box;
 		cursor: pointer;
+
+		@include when-inside(".team-member_picking"){
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+			border-right: none;
+			padding-right: $team-member-picker-border-width;
+		}
 
 		&::before{
 			@include icon("e9b3");

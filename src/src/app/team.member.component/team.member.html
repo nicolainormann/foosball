@@ -1,3 +1,7 @@
-<div class="team-member" [class.team-member_double]="double">
-	<div class="team-member__picker" (click)="pick()" [class.team-member__picker_defence]="member === 1 && double" [class.team-member__picker_offence]="member === 2 && double"></div>
+<div class="team-member" [class.team-member_double]="double" [class.team-member_picking]="showPicker">
+	<div class="team-member__picker" (click)="togglePicker()" [class.team-member__picker_defence]="member === 1 && double" [class.team-member__picker_offence]="member === 2 && double"></div>
+
+	<div class="team-member__users" *ngIf="showPicker">
+		<div class="team-member__user" *ngFor="let user of users">{{user.name}}</div>
+	</div>
 </div>

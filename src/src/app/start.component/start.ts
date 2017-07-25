@@ -1,5 +1,23 @@
 import { Component } from '@angular/core';
 
+import { UsersService } from '.././users.component/users.service';
+
+interface IUser {
+	name: string,
+	username: string,
+	rating: number,
+	rank: number,
+	wins: number,
+	losses: number
+}
+
+interface IUsers extends Array<IUser> { }
+
+class Team {
+	offence: IUser;
+	defence: IUser;
+}
+
 @Component({
 	selector: 'start',
 	templateUrl: './start.html',
@@ -7,6 +25,16 @@ import { Component } from '@angular/core';
 })
 export class StartComponent {
 	double = true;
+	teamOne: Team;
+	teamTwo: Team;
 
-	constructor() {}
+	users: IUsers;
+
+	constructor(private usersService: UsersService) {}
+
+	ngOnInit() {
+		this.usersService.getOrderedUsers("name").subscribe(users => {
+			this.users = users;
+		});
+	}
 }

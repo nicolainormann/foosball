@@ -8,10 +8,13 @@ import { Component, Input } from '@angular/core';
 export class TeamMemberComponent {
 	@Input() member: number;
 	@Input() double: boolean;
+	@Input() users;
+
+	showPicker = false;
 
 	constructor() {}
 
-	pick(){
-		console.log("sad");
+	togglePicker(){
+		this.showPicker = !this.showPicker;
 	}
 }
