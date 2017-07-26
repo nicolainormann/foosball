@@ -1,7 +1,7 @@
 <div class="team" [class.team_one]="team === 1" [class.team_two]="team === 2">
     <div class="team__container">
-        <team-member class="team__member-one" [member]="1" [double]="double" [users]="users"></team-member>
+        <team-member class="team__member-one" [member]="1" [double]="double" [users]="users" (onPickedPlayer)="pickedPlayer($event)"></team-member>
 
-        <team-member class="team__member-two" [member]="2" [double]="double" [users]="users" *ngIf="double"></team-member>
+        <team-member class="team__member-two" [member]="2" [double]="double" [users]="users" (onPickedPlayer)="pickedPlayer($event)" *ngIf="double"></team-member>
     </div>
 </div>

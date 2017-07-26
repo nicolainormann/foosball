@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'team',
@@ -9,6 +9,12 @@ export class TeamComponent {
 	@Input() team: number;
 	@Input() double: boolean;
 	@Input() users;
+
+	@Output() onTeamCreated = new EventEmitter;
 	
 	constructor() {}
+
+	pickedPlayer(user){
+console.log(user);
+	}
 }

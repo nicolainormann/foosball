@@ -18,7 +18,6 @@ $team-member-picker-border-width: 3px;
 		left: calc(100% - 3px);
 		top: 0;
 		z-index: 3; 
-		padding: $padding-small;
 		background-color: $color-white;
 		border: $team-member-picker-border-width solid $color-grey-darker;
 		border-radius: 15px;
@@ -26,7 +25,23 @@ $team-member-picker-border-width: 3px;
 	}
 
 	&__user{
-		color: $color-grey-darker;
+		padding: $padding-small $padding-medium;
+		cursor: pointer;
+
+		&-name{
+			color: $color-grey-darker;
+			line-height: 30px - $team-member-picker-border-width * 2;
+			border-radius: 15px;
+			text-align: center;
+			padding: 0 $padding-small;
+		}
+
+		&:hover{
+			.team-member__user-name{
+				color: $color-lime;
+				background-color: $color-grey-dark;
+			}
+		}
 	}
 
 	&__picker{

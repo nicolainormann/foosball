@@ -33,6 +33,8 @@ import { UserCreateComponent } from './user.create.component/user.create';
 import { StatsComponent } from './stats.component/stats';
 
 import { ValidationUserExists } from "./validation.directive/validation.user.exists";
+import { ClickOutsideDirective } from "./click.outside.directive/click.outside";
+
 
 @NgModule({
 	declarations: [
@@ -51,7 +53,8 @@ import { ValidationUserExists } from "./validation.directive/validation.user.exi
 		StatsComponent,
 		UserEditComponent,
 		UserCreateComponent,
-		ValidationUserExists
+		ValidationUserExists,
+		ClickOutsideDirective
 	],
 	imports: [
 		BrowserModule,

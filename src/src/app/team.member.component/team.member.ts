@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'team-member',
@@ -10,11 +10,24 @@ export class TeamMemberComponent {
 	@Input() double: boolean;
 	@Input() users;
 
+	@Output() onPickedPlayer = new EventEmitter;
+
 	showPicker = false;
 
 	constructor() {}
 
 	togglePicker(){
 		this.showPicker = !this.showPicker;
+	}
+
+	closePickerIfActive(){
+		if(this.showPicker){
+			this.togglePicker();
+		}
+	}
+
+	pickPlayer(user){
+		this.onPickedPlayer.emit(user);
+		this.togglePicker();
 	}
 }
