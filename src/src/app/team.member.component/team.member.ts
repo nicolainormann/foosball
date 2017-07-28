@@ -1,5 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+export class Member {
+	constructor(
+		public username: string,
+		public role: string
+	) {}
+}
+
 @Component({
 	selector: 'team-member',
 	templateUrl: './team.member.html',
@@ -14,20 +21,28 @@ export class TeamMemberComponent {
 
 	showPicker = false;
 
-	constructor() {}
+	constructor() { }
 
-	togglePicker(){
+	togglePicker() {
 		this.showPicker = !this.showPicker;
 	}
 
-	closePickerIfActive(){
-		if(this.showPicker){
+	closePickerIfActive() {
+		if (this.showPicker) {
 			this.togglePicker();
 		}
 	}
 
-	pickPlayer(user){
-		this.onPickedPlayer.emit(user);
+	pickPlayer(user) {
+		let role;
+		if (this.double) {
+			role = this.member === 1 ? "defence" : "offence";
+		}
+		else {
+			role = "single";
+		}
+
+		this.onPickedPlayer.emit(new Member(user.username, role));
 		this.togglePicker();
 	}
 }

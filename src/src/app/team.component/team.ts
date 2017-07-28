@@ -10,11 +10,11 @@ export class TeamComponent {
 	@Input() double: boolean;
 	@Input() users;
 
-	@Output() onTeamCreated = new EventEmitter;
+	@Output() onTeamUpdate = new EventEmitter;
 	
 	constructor() {}
 
-	pickedPlayer(user){
-console.log(user);
+	pickedPlayer(member){
+		console.log(member);
 	}
 }

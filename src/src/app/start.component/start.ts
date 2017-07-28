@@ -37,4 +37,8 @@ export class StartComponent {
 			this.users = users;
 		});
 	}
+
+	teamUpdate(team){
+		
+	}
 }

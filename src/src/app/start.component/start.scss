@@ -17,6 +17,16 @@
 		}
 	}
 
+	&__team-preview{
+		&_one{
+			grid-area: content-start;
+		}
+
+		&_two{
+			grid-area: content-end;
+		}
+	}
+
 	&__table{
 		grid-area: content;
 		height: 400px;

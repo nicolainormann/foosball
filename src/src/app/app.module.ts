@@ -18,6 +18,7 @@ import { StartComponent } from './start.component/start';
 import { TableComponent } from './table.component/table';
 
 import { TeamComponent } from './team.component/team';
+import { TeamPreviewComponent } from './team.preview.component/team.preview';
 import { TeamMemberComponent } from './team.member.component/team.member';
 
 import { LadderComponent } from './ladder.component/ladder';
@@ -44,6 +45,7 @@ import { ClickOutsideDirective } from "./click.outside.directive/click.outside";
 		StartComponent,
 		TableComponent,
 		TeamComponent,
+		TeamPreviewComponent,
 		TeamMemberComponent,
 		LadderComponent,
 		LadderUserComponent,
