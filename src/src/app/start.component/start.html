@@ -2,8 +2,8 @@
 	<team class="start__team start__team_one" [team]="1" [double]="double" [users]="users" (onTeamUpdate)="teamUpdate($event)"></team>
 	<team class="start__team start__team_two" [team]="2" [users]="users" [double]="double" (onTeamUpdate)="teamUpdate($event)"></team>
 
-	<team-preview class="start__team-preview start__team-preview_one" [team]="1"></team-preview>
-	<team-preview class="start__team-preview start__team-preview_two" [team]="2"></team-preview>
+	<team-preview class="start__team-preview start__team-preview_one" [team]="match.team1"></team-preview>
+	<team-preview class="start__team-preview start__team-preview_two" [team]="match.team2"></team-preview>
 
 	<table-component class="start__table"></table-component>
 </div>

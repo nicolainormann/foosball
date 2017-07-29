@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
 	styleUrls: ['./team.preview.scss']
 })
 export class TeamPreviewComponent {
-	@Input() team: number;
+	@Input() team;
 }

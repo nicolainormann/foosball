@@ -13,9 +13,24 @@ interface IUser {
 
 interface IUsers extends Array<IUser> { }
 
-class Team {
-	offence: IUser;
-	defence: IUser;
+interface IMember{
+	username: string,
+	role: string
+}
+
+interface ITeam{
+	offence: IMember,
+	defence: IMember,
+	teamNumber: number
+}
+
+class Match{
+	constructor(
+		public team1: ITeam | {},
+		public team2: ITeam | {},
+		public mode: boolean
+	)
+	{}
 }
 
 @Component({
@@ -25,12 +40,13 @@ class Team {
 })
 export class StartComponent {
 	double = true;
-	teamOne: Team;
-	teamTwo: Team;
-
 	users: IUsers;
 
-	constructor(private usersService: UsersService) {}
+	match = new Match({}, {}, this.double);
+
+	constructor(private usersService: UsersService) {
+
+	}
 
 	ngOnInit() {
 		this.usersService.getOrderedUsers("name").subscribe(users => {
@@ -38,7 +54,13 @@ export class StartComponent {
 		});
 	}
 
-	teamUpdate(team){
-		
+	teamUpdate(team: ITeam){
+		if(team.teamNumber === 1){
+			this.match.team1 = team;
+		}
+		else if(team.teamNumber === 2){
+			this.match.team2 = team;
+		}
+		console.log(this.match, team);
 	}
 }
