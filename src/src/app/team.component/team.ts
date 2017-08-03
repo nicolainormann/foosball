@@ -1,7 +1,16 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-interface IMember{
+interface IUser {
+	name: string,
 	username: string,
+	rating: number,
+	rank: number,
+	wins: number,
+	losses: number
+}
+
+interface IMember{
+	user: IUser,
 	role: string
 }
 

@@ -1,2 +1,9 @@
 <div class="team-preview">
+	<div class="team-preview__offence" *ngIf="team.offence">
+		{{team.offence.name}}
+	</div>
+
+	<div class="team-preview__defence" *ngIf="team.defence">
+		{{team.defence.name}}
+	</div>
 </div>

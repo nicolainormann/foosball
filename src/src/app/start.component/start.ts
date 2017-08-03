@@ -14,7 +14,7 @@ interface IUser {
 interface IUsers extends Array<IUser> { }
 
 interface IMember{
-	username: string,
+	user: IUser,
 	role: string
 }
 
@@ -28,7 +28,7 @@ class Match{
 	constructor(
 		public team1: ITeam | {},
 		public team2: ITeam | {},
-		public mode: boolean
+		public double: boolean
 	)
 	{}
 }
@@ -62,5 +62,11 @@ export class StartComponent {
 			this.match.team2 = team;
 		}
 		console.log(this.match, team);
+		
+		//this.removePickedPlayer()
+	}
+
+	removePickedPlayer(usernames){
+		console.log(usernames);
 	}
 }

@@ -1,8 +1,17 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+interface IUser {
+	name: string,
+	username: string,
+	rating: number,
+	rank: number,
+	wins: number,
+	losses: number
+}
+
 export class Member {
 	constructor(
-		public username: string,
+		public user: IUser,
 		public role: string
 	) {}
 }
@@ -42,7 +51,7 @@ export class TeamMemberComponent {
 			role = "single";
 		}
 
-		this.onPickedPlayer.emit(new Member(user.username, role));
+		this.onPickedPlayer.emit(new Member(user, role));
 		this.togglePicker();
 	}
 }
