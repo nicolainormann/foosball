@@ -9,18 +9,18 @@ interface IUser {
 	losses: number
 }
 
-interface IMember{
+interface IMember {
 	user: IUser,
 	role: string
 }
 
-export class Team{
+export class Team {
 	constructor(
-		public offence: IMember | {},
-		public defence: IMember | {},
+		public offence: IMember,
+		public defence: IMember,
 		public teamNumber: number
 	)
-	{}
+	{ }
 }
 
 @Component({
@@ -35,21 +35,45 @@ export class TeamComponent {
 
 	@Output() onTeamUpdate = new EventEmitter;
 
-	provisionalTeam = new Team({}, {}, 0);
+	provisionalTeam = new Team(
+		{
+			user: {
+				name: "",
+				username: "",
+				rating: 0,
+				rank: 0,
+				wins: 0,
+				losses: 0
+			},
+			role: null
+		},
+		{
+			user: {
+				name: "",
+				username: "",
+				rating: 0,
+				rank: 0,
+				wins: 0,
+				losses: 0
+			},
+			role: null
+		},
+		0
+	);
 
 	constructor() {
 
 	}
 
-	pickedPlayer(member: IMember){
-		if(member.role === "offence"){
+	pickedPlayer(member: IMember) {
+		if (member.role === "offence") {
 			this.provisionalTeam.offence = member;
 		}
-		else if(member.role === "defence"){
+		else if (member.role === "defence") {
 			this.provisionalTeam.defence = member;
 		}
 		this.provisionalTeam.teamNumber = this.team;
-		
+
 		this.onTeamUpdate.emit(this.provisionalTeam);
 	}
 }

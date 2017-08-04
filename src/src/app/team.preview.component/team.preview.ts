@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class TeamPreviewComponent {
 	@Input() team;
+
+	ngOnInit(){
+		console.log(this.team);
+	}
 }

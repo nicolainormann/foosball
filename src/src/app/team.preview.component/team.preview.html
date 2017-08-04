@@ -1,9 +1,13 @@
 <div class="team-preview">
+	<div class="team-preview__name">
+		Team {{team.teamNumber === 1 ? "White" : "Red" }}
+	</div>
+
 	<div class="team-preview__offence" *ngIf="team.offence">
-		{{team.offence.name}}
+		{{team.offence.user.name}}
 	</div>
 
 	<div class="team-preview__defence" *ngIf="team.defence">
-		{{team.defence.name}}
+		{{team.defence.user.name}}
 	</div>
 </div>

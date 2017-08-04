@@ -22,6 +22,11 @@ $team-member-picker-border-width: 3px;
 		border: $team-member-picker-border-width solid $color-grey-darker;
 		border-radius: 15px;
 		border-top-left-radius: 0;
+
+		@include when-inside(".team-member_picked"){
+			background-color: $color-grey-darker;
+			border-color: $color-lime;
+		}
 	}
 
 	&__user{
@@ -34,6 +39,10 @@ $team-member-picker-border-width: 3px;
 			border-radius: 15px;
 			text-align: center;
 			padding: 0 $padding-small;
+
+			@include when-inside(".team-member_picked"){
+				color: $color-lime;
+			}
 		}
 
 		&:hover{
@@ -83,6 +92,15 @@ $team-member-picker-border-width: 3px;
 			float: left;
 		}
 
+		@include when-inside(".team-member_picked"){
+			background-color: $color-grey-darker;
+			border-color: $color-lime;
+			
+			&::before,
+			&::after{
+				color: $color-lime;
+			} 
+		}
 
 		&_offence{
 			border-radius: 50%;

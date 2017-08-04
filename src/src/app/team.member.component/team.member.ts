@@ -29,6 +29,7 @@ export class TeamMemberComponent {
 	@Output() onPickedPlayer = new EventEmitter;
 
 	showPicker = false;
+	playerPicked = false;
 
 	constructor() { }
 
@@ -52,6 +53,7 @@ export class TeamMemberComponent {
 		}
 
 		this.onPickedPlayer.emit(new Member(user, role));
+		this.playerPicked = true;
 		this.togglePicker();
 	}
 }

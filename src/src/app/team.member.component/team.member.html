@@ -1,4 +1,4 @@
-<div class="team-member" [class.team-member_double]="double" [class.team-member_picking]="showPicker" (clickOutside)="closePickerIfActive()">
+<div class="team-member" [class.team-member_double]="double" [class.team-member_picking]="showPicker" [class.team-member_picked]="playerPicked" (clickOutside)="closePickerIfActive()">
 	<div class="team-member__picker" (click)="togglePicker()" [class.team-member__picker_defence]="member === 1 && double" [class.team-member__picker_offence]="member === 2 && double"></div>
 
 	<div class="team-member__users" *ngIf="showPicker">

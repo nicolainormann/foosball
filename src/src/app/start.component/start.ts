@@ -13,24 +13,24 @@ interface IUser {
 
 interface IUsers extends Array<IUser> { }
 
-interface IMember{
+interface IMember {
 	user: IUser,
 	role: string
 }
 
-interface ITeam{
+interface ITeam {
 	offence: IMember,
 	defence: IMember,
 	teamNumber: number
 }
 
-class Match{
+class Match {
 	constructor(
-		public team1: ITeam | {},
-		public team2: ITeam | {},
+		public team1: ITeam,
+		public team2: ITeam,
 		public double: boolean
 	)
-	{}
+	{ }
 }
 
 @Component({
@@ -41,8 +41,61 @@ class Match{
 export class StartComponent {
 	double = true;
 	users: IUsers;
+	availablePlayers: IUsers;
 
-	match = new Match({}, {}, this.double);
+	match = new Match(
+		{
+			offence: {
+				user: {
+					name: "",
+					username: "",
+					rating: 0,
+					rank: 0,
+					wins: 0,
+					losses: 0
+				},
+				role: null
+			},
+			defence: {
+				user: {
+					name: "",
+					username: "",
+					rating: 0,
+					rank: 0,
+					wins: 0,
+					losses: 0
+				},
+				role: null
+			},
+			teamNumber: 1
+		},
+		{
+			offence: {
+				user: {
+					name: "",
+					username: "",
+					rating: 0,
+					rank: 0,
+					wins: 0,
+					losses: 0
+				},
+				role: null
+			},
+			defence: {
+				user: {
+					name: "",
+					username: "",
+					rating: 0,
+					rank: 0,
+					wins: 0,
+					losses: 0
+				},
+				role: null
+			},
+			teamNumber: 2
+		},
+		this.double
+	);
 
 	constructor(private usersService: UsersService) {
 
@@ -51,22 +104,37 @@ export class StartComponent {
 	ngOnInit() {
 		this.usersService.getOrderedUsers("name").subscribe(users => {
 			this.users = users;
+			this.availablePlayers = users;
+			this.removePickedPlayer(this.match);
 		});
 	}
 
-	teamUpdate(team: ITeam){
-		if(team.teamNumber === 1){
+	teamUpdate(team: ITeam) {
+		if (team.teamNumber === 1) {
 			this.match.team1 = team;
 		}
-		else if(team.teamNumber === 2){
+		else if (team.teamNumber === 2) {
 			this.match.team2 = team;
 		}
-		console.log(this.match, team);
 		
-		//this.removePickedPlayer()
+		this.removePickedPlayer(this.match);
 	}
 
-	removePickedPlayer(usernames){
-		console.log(usernames);
+	removePickedPlayer(match) {
+		let usernames = [];
+		if (match.team1.offence.user.username) {
+			usernames.push(match.team1.offence.user.username);
+		}
+		if (match.team1.defence.user.username) {
+			usernames.push(match.team1.defence.user.username);
+		}
+		if (match.team2.offence.user.username) {
+			usernames.push(match.team2.offence.user.username);
+		}
+		if (match.team2.defence.user.username) {
+			usernames.push(match.team2.defence.user.username);
+		}
+		
+		this.availablePlayers = this.users.filter(user => usernames.indexOf(user.username) === -1);
 	}
 }
