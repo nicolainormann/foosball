@@ -1,3 +1,5 @@
+///<reference path="../../references/references.ts"/>
+
 import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';
 
 @Directive({

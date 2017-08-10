@@ -1,3 +1,5 @@
+///<reference path="../../references/references.ts"/>
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./navigation.scss']
 })
 export class NavigationComponent {
-  items = [{name: "Ladder", url : "/ladder"}, {name: "Users", url : "/users"}, {name: "Stats", url : "/stats"}];
+  items = []; //[{name: "Ladder", url : "/ladder"}, {name: "Users", url : "/users"}];
 }

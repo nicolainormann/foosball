@@ -1,11 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component/app';
@@ -14,6 +12,10 @@ import { NavigationComponent } from './navigation.component/navigation';
 import { NavigationItemComponent } from './navigation.item.component/navigation.item';
 
 import { StartComponent } from './start.component/start';
+
+import { TournamentsComponent } from './tournaments.component/tournaments';
+import { TournamentsService } from './tournaments.component/tournaments.service';
+import { TournamentComponent } from './tournament.component/tournament';
 
 import { TableComponent } from './table.component/table';
 
@@ -31,11 +33,8 @@ import { UserComponent } from './user.component/user';
 import { UserEditComponent } from './user.edit.component/user.edit';
 import { UserCreateComponent } from './user.create.component/user.create';
 
-import { StatsComponent } from './stats.component/stats';
-
 import { ValidationUserExists } from "./validation.directive/validation.user.exists";
 import { ClickOutsideDirective } from "./click.outside.directive/click.outside";
-
 
 @NgModule({
 	declarations: [
@@ -43,6 +42,8 @@ import { ClickOutsideDirective } from "./click.outside.directive/click.outside";
 		NavigationComponent,
 		NavigationItemComponent,
 		StartComponent,
+		TournamentsComponent,
+		TournamentComponent,
 		TableComponent,
 		TeamComponent,
 		TeamPreviewComponent,
@@ -52,7 +53,6 @@ import { ClickOutsideDirective } from "./click.outside.directive/click.outside";
 		UsersComponent,
 		UserListComponent,
 		UserComponent,
-		StatsComponent,
 		UserEditComponent,
 		UserCreateComponent,
 		ValidationUserExists,
@@ -61,12 +61,11 @@ import { ClickOutsideDirective } from "./click.outside.directive/click.outside";
 	imports: [
 		BrowserModule,
 		FormsModule,
-		HttpModule,
-		AppRoutingModule,
-		AngularFireModule.initializeApp(environment.firebase),
-		AngularFireDatabaseModule
+		HttpClientModule,
+		AppRoutingModule
 	],
 	providers: [
+		TournamentsService,
 		UsersService
 	],
 	bootstrap: [
