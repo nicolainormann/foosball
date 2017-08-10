@@ -1,3 +1,5 @@
+///<reference path="../../references/references.ts"/>
+
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { NgForm } from '@angular/forms';

@@ -1,20 +1,6 @@
+///<reference path="../../references/references.ts"/>
+
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-
-interface IUser {
-	name: string,
-	username: string,
-	rating: number,
-	rank: number,
-	wins: number,
-	losses: number
-}
-
-export class Member {
-	constructor(
-		public user: IUser,
-		public role: string
-	) {}
-}
 
 @Component({
 	selector: 'team-member',
@@ -44,16 +30,5 @@ export class TeamMemberComponent {
 	}
 
 	pickPlayer(user) {
-		let role;
-		if (this.double) {
-			role = this.member === 1 ? "defence" : "offence";
-		}
-		else {
-			role = "single";
-		}
-
-		this.onPickedPlayer.emit(new Member(user, role));
-		this.playerPicked = true;
-		this.togglePicker();
 	}
 }

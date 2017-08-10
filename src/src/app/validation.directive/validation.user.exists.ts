@@ -1,3 +1,5 @@
+///<reference path="../../references/references.ts"/>
+
 import { Directive, forwardRef } from '@angular/core';
 import { Validator, AbstractControl, NG_VALIDATORS } from '@angular/forms';
 
@@ -14,12 +16,12 @@ export class ValidationUserExists implements Validator {
 	}
 
 	validate(c: AbstractControl): { [key: string]: any } {
-		let exist;
+		// let exist;
 
-		this.usersService.users$.subscribe(users => {
-			exist = users.filter(user => user.username === c.value).length ? { validationUserExists: true } : null;
-		});
+		// this.usersService.users$.subscribe(users => {
+		// 	exist = users.filter(user => user.username === c.value).length ? { validationUserExists: true } : null;
+		// });
 		
-		return exist;
+		return null;
 	}
 }

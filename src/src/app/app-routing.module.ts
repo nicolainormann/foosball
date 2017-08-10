@@ -7,24 +7,10 @@ import { LadderComponent } from './ladder.component/ladder';
 
 import { UsersComponent } from './users.component/users';
 
-import { StatsComponent } from './stats.component/stats';
-
 const routes: Routes = [
   {
     path: '',
     component: StartComponent
-  },
-  {
-    path: 'ladder',
-    component: LadderComponent
-  },
-  {
-    path: 'users',
-    component: UsersComponent
-  },
-  {
-    path: 'stats',
-    component: StatsComponent
   }
 ];
 

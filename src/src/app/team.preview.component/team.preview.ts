@@ -1,3 +1,5 @@
+///<reference path="../../references/references.ts"/>
+
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -9,6 +11,6 @@ export class TeamPreviewComponent {
 	@Input() team;
 
 	ngOnInit(){
-		console.log(this.team);
+		
 	}
 }

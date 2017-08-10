@@ -1,3 +1,5 @@
+///<reference path="../../references/references.ts"/>
+
 import { Component } from '@angular/core';
 
 import { UsersService } from '.././users.component/users.service';
@@ -14,12 +16,8 @@ export class UsersComponent {
 	}
 
 	ngOnInit() {
-		this.usersService.getOrderedUsers("name").subscribe(users => {
-			this.users = users;
-		});
 	}
 
 	createUser(eventUser) {
-		this.usersService.createUser(eventUser);
 	}
 }
