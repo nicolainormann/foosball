@@ -26,7 +26,9 @@ export class StartComponent implements OnInit {
 			this.tournament = JSON.parse(localStorage.getItem(this.tournamentKey));
 		}
 		else {
-			this.tournaments = this.tournamentsService.getTournaments();
+			this.tournamentsService.getTournaments().subscribe(data => {
+				this.tournaments = data;	
+			});
 		}
 	}
 
