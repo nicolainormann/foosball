@@ -1,13 +1,9 @@
-<div class="start" [ngSwitch]="isTournamentPersisted">
-	<div *ngSwitchCase="true">
-		<!-- <team class="start__team start__team_one" [team]="1" [users]="availablePlayers" [double]="double" (onTeamUpdate)="teamUpdate($event)"></team>
-		<team class="start__team start__team_two" [team]="2" [users]="availablePlayers" [double]="double" (onTeamUpdate)="teamUpdate($event)"></team>
+<div class="start">
+	<!-- <team class="start__team start__team_one" [team]="1" [users]="availablePlayers" [double]="double" (onTeamUpdate)="teamUpdate($event)"></team>
+	<team class="start__team start__team_two" [team]="2" [users]="availablePlayers" [double]="double" (onTeamUpdate)="teamUpdate($event)"></team>
 
-		<team-preview class="start__team-preview start__team-preview_one" [team]="match.team1"></team-preview>
-		<team-preview class="start__team-preview start__team-preview_two" [team]="match.team2"></team-preview> -->
+	<team-preview class="start__team-preview start__team-preview_one" [team]="match.team1"></team-preview>
+	<team-preview class="start__team-preview start__team-preview_two" [team]="match.team2"></team-preview> -->
 
-		<table-component class="start__table"></table-component> 
-	</div>
-
-	<tournaments class="start__tournaments" [tournaments]="tournaments" (onPickTournament)="pickTournament($event)" *ngSwitchCase="false"></tournaments>
+	<table-component class="start__table"></table-component> 
 </div>

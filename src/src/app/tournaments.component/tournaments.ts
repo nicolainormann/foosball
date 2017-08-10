@@ -1,18 +1,38 @@
 ///<reference path="../../references/references.ts"/>
 
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+import { TournamentsService } from '.././tournaments.component/tournaments.service';
 
 @Component({
 	selector: 'tournaments',
 	templateUrl: './tournaments.html',
 	styleUrls: ['./tournaments.scss']
 })
-export class TournamentsComponent {
-	@Input() tournaments: ITournaments;
+export class TournamentsComponent implements OnInit{
+	tournamentKey = "tournament";
+	tournament: ITournamentShort;
+	isTournamentPersisted = localStorage.getItem(this.tournamentKey) ? true : false;
 
-	@Output() onPickTournament = new EventEmitter;
+	tournaments: ITournaments;
 
-	pickTournament(tournament){
-		this.onPickTournament.emit(tournament);
+	constructor(private tournamentsService: TournamentsService) { }
+
+	ngOnInit() {
+		if (this.isTournamentPersisted) {
+			this.tournament = JSON.parse(localStorage.getItem(this.tournamentKey));
+		}
+		else {
+			this.tournamentsService.getTournaments().subscribe(data => {
+				this.tournaments = data;	
+			});
+		}
+	}
+
+	pickTournament(tournament) {
+		this.tournament = tournament;
+
+		localStorage.setItem(this.tournamentKey, JSON.stringify(tournament));
+		this.isTournamentPersisted = true;
 	}
 }
